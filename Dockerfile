@@ -18,6 +18,7 @@ WORKDIR /app
 ADD start-docker-gen.sh /app/start-docker-gen.sh
 ADD reload-nginx-container.sh /app/reload-nginx-container.sh
 ADD nginx.tmpl /app/nginx.tmpl
+ADD nginx-path.tmpl /app/nginx-path.tmpl
 
 ENV DOCKER_HOST unix:///var/run/docker.sock
 
