@@ -1,0 +1,14 @@
+proxy:
+  image: andrefernandes/docker-nginx
+  ports:
+    - "80:80"
+dockergen:
+  image: andrefernandes/docker-gen
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /usr/bin/docker:/usr/bin/docker
+  volumes_from:
+    - proxy
+  environment:
+    - PROXY_NAME=proxy_1
+
